@@ -6,7 +6,7 @@ defmodule Elixirfiretruck.Comment do
     field :content, :string
     belongs_to :incident, Elixirfiretruck.Incident
 
-    timestamps()
+    timestamps
   end
 
   @doc """

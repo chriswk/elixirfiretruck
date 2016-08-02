@@ -6,11 +6,11 @@ defmodule Elixirfiretruck.Repo.Migrations.CreateIncident do
       add :name, :string
       add :client, :string
       add :dc, :string
-      add :command, :string
+      add :command, :text
       add :duration, :float
       add :finn_app, :string
       add :finn_env, :string
-      add :output, :string
+      add :output, :text
 
       timestamps()
     end

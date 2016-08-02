@@ -23,5 +23,14 @@ defmodule Elixirfiretruck.Router do
   scope "/api", Elixirfiretruck do
      pipe_through :api
      resources "/incidents", IncidentController
+     post "/incidents/import", IncidentController, :importEvent
+     post "/incidents/bulk", IncidentController, :bulkImport
+
    end
+
+   forward "/graphql", Absinthe.Plug,
+    schema: Elixirfiretruck.Schema
+
+   get "/graphiql", Absinthe.Plug.GraphiQL, schema: Elixirfiretruck.Schema
+   post "/graphiql", Absinthe.Plug, schema: Elixirfiretruck.Schema
 end

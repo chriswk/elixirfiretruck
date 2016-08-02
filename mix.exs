@@ -19,7 +19,7 @@ defmodule Elixirfiretruck.Mixfile do
   def application do
     [mod: {Elixirfiretruck, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :absinthe_plug, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -38,7 +38,10 @@ defmodule Elixirfiretruck.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-    {:poison, "~> 2.0"}]
+     {:poison, "~> 2.0"},
+     {:absinthe_plug, "~> 1.1"},
+     {:timex, "~> 3.0"},
+     {:timex_ecto, "~> 3.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

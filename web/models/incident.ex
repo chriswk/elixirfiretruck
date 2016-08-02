@@ -1,5 +1,6 @@
 defmodule Elixirfiretruck.Incident do
   use Elixirfiretruck.Web, :model
+
   schema "incidents" do
     field :name, :string
     field :client, :string
@@ -10,7 +11,7 @@ defmodule Elixirfiretruck.Incident do
     field :finn_env, :string
     field :output, :string
 
-    timestamps()
+    timestamps
   end
 
   @doc """
@@ -19,6 +20,6 @@ defmodule Elixirfiretruck.Incident do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :client, :dc, :command, :duration, :finn_app, :finn_env, :output])
-    |> validate_required([:name, :client, :dc, :command, :duration, :finn_app, :finn_env, :output])
+    |> validate_required([:name, :client, :dc])
   end
 end
